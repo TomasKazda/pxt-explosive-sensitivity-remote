@@ -47,7 +47,7 @@ radio.onReceivedNumber(function (receivedNumber: number) {
         led.plot((receivedNumber % 3) * 2, Math.idiv(receivedNumber, 3))
     } else
     if (receivedNumber < 16) {
-        led.plot((receivedNumber % 3) * 2, Math.idiv(receivedNumber, 3) + 3)
+        led.plot(((receivedNumber - 10) % 3) * 2, Math.idiv((receivedNumber - 10), 3) + 3)
     }
 })
 
