@@ -15,12 +15,12 @@ let clear = (): void => {
 
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     clear()
-    radio.sendNumber(99) //run
+    radio.sendNumber(100) //stop
 })
 
 input.onButtonPressed(Button.AB, function () {
     clear()
-    radio.sendNumber(100) //stop
+    radio.sendNumber(99) //run
 })
 
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
