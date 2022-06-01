@@ -16,11 +16,13 @@ let clear = (): void => {
 input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     clear()
     radio.sendNumber(100) //stop
+    music.playTone(Note.C, music.beat())
 })
 
 input.onButtonPressed(Button.AB, function () {
     clear()
     radio.sendNumber(99) //run
+    music.playTone(Note.CSharp5, music.beat())
 })
 
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
@@ -31,16 +33,15 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
 
 input.onButtonPressed(Button.A, function () {
     deltamodifier = Math.constrain(deltamodifier - 0.1, 0.8, 2.8)
-    console.logValue("d", 1 + ((deltamodifier * 10 + 12 - 22) / 10))
+    //console.logValue("d", 1 + ((deltamodifier * 10 + 12 - 22) / 10))
     whaleysans.showNumber(deltamodifier * 10)
 })
 
 input.onButtonPressed(Button.B, function () {
     deltamodifier = Math.constrain(deltamodifier + 0.1, 0.8, 2.8)
-    console.logValue("d", 1 + ((deltamodifier * 10 + 12 - 22) / 10))
+    //console.logValue("d", 1 + ((deltamodifier * 10 + 12 - 22) / 10))
     whaleysans.showNumber(deltamodifier * 10)
 })
-
 
 radio.onReceivedNumber(function (receivedNumber: number) {
     if (receivedNumber < 6) {
